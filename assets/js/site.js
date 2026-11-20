@@ -12,9 +12,9 @@
   if (header) {
     var active = header.getAttribute('data-active');
     var home = active === '';
-    /* Home: in-page anchors with scroll-spy. Other pages: Work and Approach are their own pages. */
+    /* Home: in-page anchors with scroll-spy. Other pages: Work, About and Contact go to the homepage sections; Approach is its own page. */
     var items = [
-      ['work', 'Work', home ? '#work' : 'work-snyk.html'],
+      ['work', 'Work', home ? '#work' : 'index.html#work'],
       ['about', 'About', home ? '#about' : 'index.html#about'],
       ['approach', 'Approach', home ? '#approach' : 'approach.html'],
       ['contact', 'Contact', home ? '#contact' : 'index.html#contact']
@@ -33,6 +33,22 @@
   }
 
   document.querySelectorAll('[data-arrow]').forEach(function (el) { el.innerHTML = arrowSvg; });
+
+  /* ---------- Arriving with a #section (e.g. index.html#work from another page) ----------
+     Smooth scrolling can swallow the browser's own jump on load, so jump there ourselves. */
+  function jumpToHash() {
+    var id = location.hash && decodeURIComponent(location.hash.slice(1));
+    var el = id && document.getElementById(id);
+    if (!el) return;
+    var root = document.documentElement, prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    el.scrollIntoView();
+    root.style.scrollBehavior = prev;
+  }
+  if (location.hash) {
+    requestAnimationFrame(jumpToHash);
+    window.addEventListener('load', jumpToHash);
+  }
 
   /* ---------- External links always open in a new tab ---------- */
   document.addEventListener('click', function (e) {
@@ -167,4 +183,20 @@
   window.addEventListener('resize', onScroll);
   window.addEventListener('load', frame);
   frame();
+  /* ---------- Segmented control: slide the thumb, then navigate ---------- */
+  var seg = document.querySelector('.seg');
+  if (seg && seg.querySelector('.thumb')) {
+    Array.prototype.slice.call(seg.querySelectorAll('a')).forEach(function (a, idx) {
+      a.addEventListener('click', function (ev) {
+        if (a.getAttribute('aria-current') === 'page') { ev.preventDefault(); return; }
+        if (reduce || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button !== 0) return;
+        ev.preventDefault();
+        seg.style.setProperty('--i', idx);
+        seg.querySelectorAll('a').forEach(function (x) { x.removeAttribute('aria-current'); });
+        a.setAttribute('aria-current', 'page');
+        try { sessionStorage.setItem('segNav', '1'); } catch (e) {}
+        setTimeout(function () { location.href = a.href; }, 120);
+      });
+    });
+  }
 })();

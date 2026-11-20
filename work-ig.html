@@ -10,21 +10,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=20261120g">
+<script>try{if(sessionStorage.getItem('segNav')){sessionStorage.removeItem('segNav');document.documentElement.classList.add('seg-nav')}}catch(e){}</script>
 </head>
 <body>
 <header class="site-header" data-active="work"></header>
 
 <main class="wrap">
-  <div class="page-head">
-    <div class="stack" style="gap:20px">
-      <h1 class="display" data-speed="-0.06">Work</h1>
+  <div class="page-head work-head">
+    <div class="stack" style="gap:28px">
+      <h1 class="page-title" data-speed="-0.06" aria-label="Work"><span class="line" aria-hidden="true"><span>Work</span></span></h1>
       <p class="lede">A sample of projects to give a flavour of my experience.</p>
     </div>
-    <nav class="seg" aria-label="Projects">
-      <a href="work-snyk.html">Snyk</a>
-      <a href="work-ig.html" aria-current="page">IG</a>
-      <a href="work-pvcase.html">PVcase</a>
+    <nav class="seg" aria-label="Projects" style="--i:1">
+      <span class="thumb" aria-hidden="true"></span>
+      <a href="work-snyk.html"><span class="n" aria-hidden="true">01</span>Snyk</a>
+      <a href="work-ig.html" aria-current="page"><span class="n" aria-hidden="true">02</span>IG</a>
+      <a href="work-pvcase.html"><span class="n" aria-hidden="true">03</span>PVcase</a>
     </nav>
   </div>
 
@@ -33,12 +35,12 @@
       <div class="section" style="border:0;padding:0">
         <div class="col-label reveal stack" style="gap:20px">
           <span class="eyebrow">IG</span>
-          <h2 class="h2 big">Trading app redesign</h2>
+          <h2 class="h2 big">New trading web &amp; mobile app</h2>
         </div>
         <div class="col-main" data-stagger="0.1">
           <div class="row reveal"><div class="k">Brief</div><p class="v">IG offers options, futures, CFDs and spread bets to retail clients in Europe, US and Asia. Its apps were 8-10 years old, with UX and technical debt and diverging web and mobile experiences.</p></div>
           <div class="row reveal"><div class="k">User insights</div><p class="v">Needs vary by asset class, strategy and device setup; a trader may use four or more screens. We narrowed scope to the top 10% of clients by value, who drove over 80% of revenue.</p></div>
-          <div class="row key reveal"><div class="k">Process</div><p class="v">I led the team gathering qual and quant, using modes of use, and day-in-life frameworks to structure complex user needs. Led six ideation design sprints.</p></div>
+          <div class="row key reveal"><div class="k">Process</div><p class="v">I led the team gathering qual and quant, using modes of use, and day-in-the-life frameworks to structure complex user needs. Led six ideation design sprints.</p></div>
         </div>
       </div>
       <figure class="figure tall reveal">
@@ -53,22 +55,62 @@
       <div class="section" style="border:0;padding:0">
         <div class="col-label reveal stack" style="gap:20px">
           <span class="eyebrow">IG</span>
+          <h2 class="h2 big">Web app</h2>
+        </div>
+        <div class="col-main" data-stagger="0.1">
+          <div class="row reveal"><div class="k">Project</div><p class="v">A two-year programme of work, leading eight designers and 30 developers. Regular exec updates. The product was carefully released in a series of alphas &amp; betas for rapid client feedback.</p></div>
+          <div class="row key reveal"><div class="k">Outcome</div>
+            <ul class="v outcomes">
+              <li>Eliminated 1,000s of client support calls generated from legacy UX debt.</li>
+              <li>New platform was easier to onboard, prospect-to-client conversion time reduced by 15%.</li>
+              <li>In independent industry surveys traders rated IG's platforms as #1.</li>
+              <li>We aimed to minimise churn, so gave clients a free choice to switch. Within 6 months 70% of high value clients had done so.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <figure class="figure shot reveal">
+        <img src="img/ig-web.png" alt="Redesigned IG web trading platform, commodities watchlist and gold chart">
+        <figcaption>Redesigned IG web trading platform, commodities watchlist and chart</figcaption>
+      </figure>
+    </div>
+
+    <div class="stack" style="gap:48px">
+      <div class="section" style="border:0;padding:0">
+        <div class="col-label reveal stack" style="gap:20px">
+          <span class="eyebrow">IG</span>
           <h2 class="h2 big">Mobile app redesign</h2>
         </div>
         <div class="col-main" data-stagger="0.1">
-          <div class="row reveal"><div class="k">Insight</div><p class="v">Web took the lion's share of viewing time, yet 50% of trades were placed on mobile by high-value clients logging in many times a day.</p></div>
+          <div class="row reveal"><div class="k">Insight</div><p class="v">Web took the lion's share of viewing time, yet 50% of trades were placed on mobile by high value clients logging in many times a day.</p></div>
           <div class="row reveal"><div class="k">Process</div><p class="v">I set up a dedicated qual and quant research team, then iteratively prototyped and tested concepts to create a new IA balancing IG-wide patterns with native Android and iOS design.</p></div>
           <div class="row key reveal"><div class="k">Outcome</div><p class="v">Launched to a 4.6/5 App Store rating, the highest in its category at the time.</p></div>
         </div>
       </div>
       <figure class="figure reveal">
-        <div class="media ph"><div class="media-inner"></div></div>
+        <div class="media phones"><div class="phones-row"><img src="img/ig-mobile-1.png" alt="Redesigned IG mobile app, watchlist"><img src="img/ig-mobile-2.png" alt="Redesigned IG mobile app, deal ticket"><img src="img/ig-mobile-3.png" alt="Redesigned IG mobile app, positions"></div></div>
+        <figcaption>Redesigned IG mobile app: watchlist, deal ticket and positions</figcaption>
       </figure>
     </div>
+  </section>
+
+  <section class="section projects-rows" style="flex-direction:column;gap:48px;padding-bottom:80px">
+    <div class="col-label reveal stack" style="gap:20px;position:static">
+      <span class="eyebrow">IG</span>
+      <h2 class="h2 big">Legacy app</h2>
+    </div>
+    <figure class="figure reveal">
+      <div class="legacy-web"><img src="img/ig-legacy-web.png" alt="IG legacy web trading platform"></div>
+      <figcaption>Legacy web app</figcaption>
+    </figure>
+    <figure class="figure reveal">
+      <div class="legacy-phones"><img src="img/ig-legacy-mobile-1.png" alt="IG legacy mobile app, markets"><img src="img/ig-legacy-mobile-2.png" alt="IG legacy mobile app, deal ticket"><img src="img/ig-legacy-mobile-3.png" alt="IG legacy mobile app, chart"></div>
+      <figcaption>Legacy mobile app</figcaption>
+    </figure>
   </section>
 </main>
 
 <footer class="site-footer"></footer>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=20261120g"></script>
 </body>
 </html>

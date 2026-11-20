@@ -10,21 +10,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=20261120g">
+<script>try{if(sessionStorage.getItem('segNav')){sessionStorage.removeItem('segNav');document.documentElement.classList.add('seg-nav')}}catch(e){}</script>
 </head>
 <body>
 <header class="site-header" data-active="work"></header>
 
 <main class="wrap">
-  <div class="page-head">
-    <div class="stack" style="gap:20px">
-      <h1 class="display" data-speed="-0.06">Work</h1>
+  <div class="page-head work-head">
+    <div class="stack" style="gap:28px">
+      <h1 class="page-title" data-speed="-0.06" aria-label="Work"><span class="line" aria-hidden="true"><span>Work</span></span></h1>
       <p class="lede">A sample of projects to give a flavour of my experience.</p>
     </div>
-    <nav class="seg" aria-label="Projects">
-      <a href="work-snyk.html">Snyk</a>
-      <a href="work-ig.html">IG</a>
-      <a href="work-pvcase.html" aria-current="page">PVcase</a>
+    <nav class="seg" aria-label="Projects" style="--i:2">
+      <span class="thumb" aria-hidden="true"></span>
+      <a href="work-snyk.html"><span class="n" aria-hidden="true">01</span>Snyk</a>
+      <a href="work-ig.html"><span class="n" aria-hidden="true">02</span>IG</a>
+      <a href="work-pvcase.html" aria-current="page"><span class="n" aria-hidden="true">03</span>PVcase</a>
     </nav>
   </div>
 
@@ -33,16 +35,16 @@
       <div class="section" style="border:0;padding:0">
         <div class="col-label reveal stack" style="gap:20px">
           <span class="eyebrow">PVcase</span>
-          <h2 class="h2 big">Silos to platform</h2>
+          <h2 class="h2 big">Silos to connected platform</h2>
         </div>
         <div class="col-main" data-stagger="0.1">
-          <div class="row reveal"><div class="k">Context</div><p class="v">Today PVcase has four siloed point solutions. Finish the work in one and the hand off is a PDF, data and user insights are lost. The flagship product has saturated its TAM, we need to connect the point solutions in platform, leverage existing users for more 0-1 bets.</p></div>
-          <div class="row reveal"><div class="k">Challenge</div><p class="v">First to create a data model that works from siting, developing and operating a utility PV plant that matches the mental model of many personas.</p></div>
+          <div class="row reveal"><div class="k">Context</div><p class="v">Today PVcase has four siloed point solutions. Finish the work in one and the hand-off is a PDF, data and user insights are lost. The flagship product has saturated its TAM. We need to connect the point solutions into a platform, leverage existing users for more 0-1 bets.</p></div>
+          <div class="row reveal"><div class="k">Challenge</div><p class="v">First to create a data model that works across siting, developing and operating a utility PV plant that matches the mental model of many personas.</p></div>
           <div class="row key reveal"><div class="k">Process</div><p class="v">Primary research across different personas, mapping the domain. Creating an object model abstraction, workflows and then UI.</p></div>
         </div>
       </div>
-      <figure class="figure tall reveal">
-        <div class="media"><div class="media-inner"><img src="img/pvcase.png" alt="PVcase Prospect: campaign portfolio view" style="object-position:50% 0%"></div></div>
+      <figure class="figure reveal">
+        <div class="pv-placeholder"><p>Latest app design to be shipped Q1 2027not yet shipped.<br>Not shareable here.</p></div>
         <figcaption>PVcase Prospect: campaign portfolio view</figcaption>
       </figure>
     </div>
@@ -53,11 +55,11 @@
       <div class="section" style="border:0;padding:0">
         <div class="col-label reveal stack" style="gap:20px">
           <span class="eyebrow">PVcase</span>
-          <h2 class="h2 big">Legacy apps</h2>
+          <h2 class="h2 big">Legacy app</h2>
         </div>
       </div>
       <figure class="figure reveal">
-        <div class="media ph"><div class="media-inner"></div></div>
+        <div class="pv-legacy"><img src="img/pvcase-legacy.png" alt="PVcase legacy web app"></div>
         <figcaption>Legacy web app</figcaption>
       </figure>
     </div>
@@ -65,6 +67,6 @@
 </main>
 
 <footer class="site-footer"></footer>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=20261120g"></script>
 </body>
 </html>
